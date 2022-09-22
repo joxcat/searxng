@@ -1,0 +1,52 @@
+version: '3.3'
+
+services:
+  redis:
+    container_name: searx_redis
+    image: "redis:alpine"
+    command: redis-server --save "" --appendonly "no"
+    restart: unless-stopped
+    networks:
+      - searxng
+    tmpfs:
+      - /var/lib/redis
+    cap_drop:
+      - ALL
+    cap_add:
+      - SETGID
+      - SETUID
+      - DAC_OVERRIDE
+
+  searxng:
+    container_name: searxng
+    # image: searxng/searxng:latest
+    build: .
+    restart: unless-stopped
+    networks:
+      - proxy
+      - searxng
+    volumes:
+      - ./data:/etc/searxng:rw
+      - ./searx/engines:/usr/local/searxng/searx/engines
+      - ./searx/plugins:/usr/local/searxng/searx/plugins
+    environment:
+      - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME:-localhost}/
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+      - DAC_OVERRIDE
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "1"
+networks:
+  proxy:
+    external:
+      name: proxy
+  searxng:
+    ipam:
+      driver: default

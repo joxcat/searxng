@@ -1393,6 +1393,7 @@ engines:
     engine: searchcode_code
     shortcut: scc
     disabled: true
+    timeout: 5.0
 
   - name: framalibre
     engine: framalibre
