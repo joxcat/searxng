@@ -26,13 +26,13 @@ enabled_plugins:
   - 'Open Access DOI rewrite'
 
 hostname_replace:
-  '(.*\.)?youtube\.com$': 'yewtu.be'
-  '(.*\.)?youtu\.be$': 'yewtu.be'
-  '(.*\.)?youtube-noocookie\.com$': 'yotter.example.com'
+  # '(.*\.)?youtube\.com$': 'yewtu.be'
+  # '(.*\.)?youtu\.be$': 'yewtu.be'
+  # '(.*\.)?youtube-noocookie\.com$': 'yotter.example.com'
   '(.*\.)?reddit\.com$': 'teddit.net'
   '(.*\.)?redd\.it$': 'teddit.net'
   '(www\.)?twitter\.com$': 'nitter.net'
-  '(.*\.)?instagram\.com$': 'bibliogram.art'
+  # '(.*\.)?instagram\.com$': 'bibliogram.art'
   '(.*\.)?medium\.com$': 'scribe.rip'
 
 ui:

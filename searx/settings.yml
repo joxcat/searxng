@@ -997,6 +997,24 @@ engines:
       require_api_key: false
       results: HTML
 
+  # - name: hacker news - algolia
+  #   engine: xpath
+  #   search_url: https://hn.algolia.com/api/v1/search?query={query}&page={pageno}&tags=story
+  #   first_page_num: 0
+  #   results_xpath: /hists
+  #   url_xpath: ./url
+  #   title_xpath: ./title
+  #   content_xpath: ./comment_text
+  #   categories: it
+  #   shortcut: hn
+  #   disabled: true
+  #   about:
+  #     website: https://hn.algolia.com
+  #     official_api_documentation: https://hn.algolia.com/api
+  #     use_official_api: true
+  #     require_api_key: false
+  #     results: JSON
+
   - name: azlyrics
     shortcut: lyrics
     engine: xpath
