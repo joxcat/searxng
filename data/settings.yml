@@ -15,7 +15,7 @@ server:
   # base_url is defined in the SEARXNG_BASE_URL environment variable, see .env and docker-compose.yml
   secret_key: "whothatreallyanultrasupraduprasupperkittykey"  # change this!
   limiter: true # can be disabled for a private instance
-  image_proxy: true 
+  image_proxy: true
 
 enabled_plugins:
   - 'Hash plugin'
@@ -29,15 +29,15 @@ hostname_replace:
   # '(.*\.)?youtube\.com$': 'yewtu.be'
   # '(.*\.)?youtu\.be$': 'yewtu.be'
   # '(.*\.)?youtube-noocookie\.com$': 'yotter.example.com'
-  '(.*\.)?reddit\.com$': 'teddit.net'
-  '(.*\.)?redd\.it$': 'teddit.net'
-  '(www\.)?twitter\.com$': 'nitter.net'
+  # '(.*\.)?reddit\.com$': 'teddit.net'
+  # '(.*\.)?redd\.it$': 'teddit.net'
+  # '(www\.)?twitter\.com$': 'nitter.net'
   # '(.*\.)?instagram\.com$': 'bibliogram.art'
   '(.*\.)?medium\.com$': 'scribe.rip'
 
 ui:
   static_use_hash: true
-  default_theme: custom-simple
+  default_theme: simple
 
 redis:
   url: redis://redis:6379/0
@@ -61,7 +61,7 @@ engines:
       use_official_api: false
       require_api_key: false
       results: HTML
-  
+
   # - name: odcrawler
   #   shortcut: odc
   #   engine: xpath
